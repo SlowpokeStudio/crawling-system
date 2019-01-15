@@ -12,15 +12,26 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.slowpoke.crawling.service.IssueService;
 import org.slowpoke.crawling.task.TaskService;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.io.IOException;
 
 @Slf4j
 @Service
 public class TaskServiceImpl implements TaskService {
+
+    @Resource
+    private IssueService issueService;
+
+    @Scheduled(cron = "0 0 0 * * *")
+    @SchedulerLock(name = "genIssue", lockAtMostForString = "PT30S")
+    public void genIssue() {
+        issueService.genIssue();
+    }
 
     @Scheduled(cron = "*/10 * * * * *")
     @SchedulerLock(name = "jsk3_CP360", lockAtMostForString = "PT30S")
