@@ -11,7 +11,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>org.slowpoke</groupId>
-    <artifactId>crawling-system-shedlock</artifactId>
+    <artifactId>crawling-system-mono</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>demo</name>
     <description>Demo project for Spring Boot</description>
