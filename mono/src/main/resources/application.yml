@@ -1,14 +1,9 @@
 spring:
   profiles: local
   redis:
-    host: 192.168.250.35
+    host: 192.168.250.221
 server:
   port: 8041
-lotto:
-  issue:
-    host: "http://localhost:8051"
-  draw:
-    host: "http://localhost:8061"
 
 ---
 
@@ -18,8 +13,3 @@ spring:
     host: 10.0.0.11
 server:
   port: 8041
-lotto:
-  issue:
-    host: "http://lotto-issue"
-  draw:
-    host: "http://lotto-draw"
